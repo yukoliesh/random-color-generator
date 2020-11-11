@@ -53,9 +53,7 @@ const App = (props) => {
     setFade(true);
 
     const hexTxt = query;
-    console.log("txt", hexTxt);
     const firstChar = hexTxt.charAt(0);
-    console.log(firstChar);
     if(firstChar === "0" || firstChar === "1" || firstChar === "2" || firstChar === "3"){
       setTxtColor("#ffffff");
     } else {
@@ -73,7 +71,7 @@ const App = (props) => {
         <Box width={1 / 2}>
           <RightAligned flexDirection="column" p={6} justifyContent="flex-end">
             <Box width={1}>
-              <ColorName color={txtColor}>{colorHex}</ColorName>
+              <ColorName color={txtColor} data-test-id="random-color">{colorHex}</ColorName>
             </Box>
             <Box width={1}>
               <Flex justifyContent="flex-end">
@@ -97,7 +95,7 @@ const App = (props) => {
               <Desc color={txtColor}>Click the button and generate the lucky color of your day!</Desc>
             </Box>
             <Box>
-              <GeneratorButton id="colorSubmit" onClick={onGenerateColor} bgColor={colorHex} color={txtColor}>Generate a Color!</GeneratorButton>
+              <GeneratorButton id="colorSubmit" onClick={onGenerateColor} bgColor={colorHex} color={txtColor} data-testid="generator-button">Generate a Color!</GeneratorButton>
             </Box>
           </Flex>
         </Box>
