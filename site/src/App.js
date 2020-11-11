@@ -2,7 +2,7 @@
 import React from 'react';
 import { Flex, Box } from "reflexbox";
 import axios from 'axios';
-import {BackgroundWrapper, RightAligned, Title, Desc, ColorName, ColorButton, ColorNameTitle} from "./style";
+import {BackgroundWrapper, RightAligned, Title, Desc, ColorName, GeneratorButton, ColorNameTitle, ThemedTxtColor} from "./style";
 import './App.css';
 
 
@@ -22,6 +22,7 @@ const App = (props) => {
   const [colorRGB, setColorRGB] = React.useState("rgb(36, 177, 224)");
   const [isLoading, setIsLoading] = React.useState(false);
   const [fade, setFade] = React.useState(false);
+  const [txtColor, setTxtColor] = React.useState("#fff");
 
   React.useEffect(() => {
     let mounted = true;
@@ -50,7 +51,19 @@ const App = (props) => {
     setColorHex(hex);
     setColorRGB(rgb);
     setFade(true);
+
+    const hexTxt = query;
+    console.log("txt", hexTxt);
+    const firstChar = hexTxt.charAt(0);
+    console.log(firstChar);
+    if(firstChar === "0" || firstChar === "1" || firstChar === "2" || firstChar === "3"){
+      setTxtColor("#ffffff");
+    } else {
+      setTxtColor("#191919");
+    }
   }
+
+
   return (
     <>
     {isLoading ? (
@@ -60,17 +73,17 @@ const App = (props) => {
         <Box width={1 / 2}>
           <RightAligned flexDirection="column" p={6} justifyContent="flex-end">
             <Box width={1}>
-              <ColorName>{colorHex}</ColorName>
+              <ColorName color={txtColor}>{colorHex}</ColorName>
             </Box>
             <Box width={1}>
               <Flex justifyContent="flex-end">
                 <Box pr={3}>
-                  <ColorNameTitle>RGB</ColorNameTitle>
-                  {colorRGB}
+                  <ColorNameTitle color={txtColor}>RGB</ColorNameTitle>
+                  <ThemedTxtColor color={txtColor}>{colorRGB}</ThemedTxtColor>
                 </Box>
                 <Box>
-                  <ColorNameTitle>Name</ColorNameTitle> 
-                  {colorName}</Box>
+                  <ColorNameTitle color={txtColor}>Name</ColorNameTitle> 
+                  <ThemedTxtColor color={txtColor}>{colorName}</ThemedTxtColor></Box>
               </Flex>
             </Box>
           </RightAligned>
@@ -78,13 +91,13 @@ const App = (props) => {
         <Box width={1 / 2}>
           <Flex flexDirection="column">
             <Box width={1}>
-              <Title>Color of the Day</Title>
+              <Title color={txtColor}>Color of the Day</Title>
             </Box>
             <Box width={1} mb={4}>
-              <Desc>Click the button and generate the lucky color of your day!</Desc>
+              <Desc color={txtColor}>Click the button and generate the lucky color of your day!</Desc>
             </Box>
             <Box>
-              <ColorButton id="colorSubmit" onClick={onGenerateColor}>Generate a Color!</ColorButton>
+              <GeneratorButton id="colorSubmit" onClick={onGenerateColor} bgColor={colorHex} color={txtColor}>Generate a Color!</GeneratorButton>
             </Box>
           </Flex>
         </Box>
