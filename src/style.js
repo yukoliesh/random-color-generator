@@ -1,5 +1,5 @@
 import styled from '@xstyled/styled-components';
-import { th, css } from '@xstyled/system';
+import { th } from '@xstyled/system';
 import { Flex } from "reflexbox";
 import { darken } from 'polished'
 
