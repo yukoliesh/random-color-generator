@@ -4,6 +4,7 @@ import { Flex, Box } from "reflexbox";
 import axios from 'axios';
 import {BackgroundWrapper, RightAligned, Title, Desc, ColorName, GeneratorButton, ColorNameTitle, ThemedTxtColor} from "./style";
 import './App.css';
+import { Loader } from "./Loader/Loader";
 
 
 const App = (props) => {
@@ -65,7 +66,7 @@ const App = (props) => {
     <>
     {isLoading ? (
       <BackgroundWrapper justifyContent="center" alignItems="center">
-        <Box>Loading...</Box>
+        <Box><Loader /></Box>
       </BackgroundWrapper>
     ) : (
       <BackgroundWrapper justifyContent="flex-start" alignItems="center" width={1} bgColor={colorHex} onAnimationEnd={() => !fade} className={fade ? 'fade' : ''}>
