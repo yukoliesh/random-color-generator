@@ -1,6 +1,8 @@
 import styled from '@xstyled/styled-components';
 import { th, css } from '@xstyled/system';
 import { Flex } from "reflexbox";
+import { darken } from 'polished'
+
 
 
 export const BackgroundWrapper = styled(Flex)`
@@ -46,7 +48,7 @@ width: 40%;
 max-width: 300px;
 border-radius: ${th.space(8)};
 color: ${(props) => props.color};
-background-color: ${(props) => props.bgColor};
+background-color: ${(props) => darken(0.1, props.bgColor)};
 border: solid 3px ${(props) => props.color};
 `;
 
