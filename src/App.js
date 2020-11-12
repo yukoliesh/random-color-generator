@@ -94,7 +94,7 @@ const App = (props) => {
               <Title color={txtColor}>Color of the Day</Title>
             </Box>
             <Box width={1} mb={4}>
-              <Desc color={txtColor}>Click the button and generate the lucky color of your day!</Desc>
+              <Desc color={txtColor}>Click the button and generate the lucky color of your day! <br /> Or... keep clicking for fun!</Desc>
             </Box>
             <Box>
               <GeneratorButton id="colorSubmit" onClick={onGenerateColor} bgColor={colorHex} color={txtColor} data-testid="generator-button">Generate a Color!</GeneratorButton>
