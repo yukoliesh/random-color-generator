@@ -3,7 +3,10 @@ import { th } from '@xstyled/system';
 import { Flex } from "reflexbox";
 import { darken } from 'polished'
 
-
+export const LoadingBackground = styled(Flex)`
+  width: 100%;
+  height: 100vh;
+`;
 
 export const BackgroundWrapper = styled(Flex)`
   background-color: ${(props) => props.bgColor};

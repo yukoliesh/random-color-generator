@@ -54,7 +54,7 @@ const App = (props) => {
 
     const hexTxt = query;
     const firstChar = hexTxt.charAt(0);
-    if(firstChar === "0" || firstChar === "1" || firstChar === "2" || firstChar === "3"){
+    if(firstChar === "0" || firstChar === "1" || firstChar === "2" || firstChar === "3" || firstChar === "4"){
       setTxtColor("#ffffff");
     } else {
       setTxtColor("#191919");
@@ -65,7 +65,9 @@ const App = (props) => {
   return (
     <>
     {isLoading ? (
-      <div>Loading...</div>
+      <BackgroundWrapper justifyContent="center" alignItems="center">
+        <Box>Loading...</Box>
+      </BackgroundWrapper>
     ) : (
       <BackgroundWrapper justifyContent="flex-start" alignItems="center" width={1} bgColor={colorHex} onAnimationEnd={() => !fade} className={fade ? 'fade' : ''}>
         <Box width={1 / 2}>
@@ -86,7 +88,7 @@ const App = (props) => {
             </Box>
           </RightAligned>
         </Box>
-        <Box width={1 / 2}>
+        <Box width={1 / 2} mr={16}>
           <Flex flexDirection="column">
             <Box width={1}>
               <Title color={txtColor}>Color of the Day</Title>
