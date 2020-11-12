@@ -52,8 +52,7 @@ const App = (props) => {
     setColorRGB(rgb);
     setFade(true);
 
-    const hexTxt = query;
-    const firstChar = hexTxt.charAt(0);
+    const firstChar = query.charAt(0);
     if(firstChar === "0" || firstChar === "1" || firstChar === "2" || firstChar === "3" || firstChar === "4"){
       setTxtColor("#ffffff");
     } else {
@@ -88,7 +87,7 @@ const App = (props) => {
             </Box>
           </RightAligned>
         </Box>
-        <Box width={1 / 2} mr={16}>
+        <Box width={1 / 2} m={16}>
           <Flex flexDirection="column">
             <Box width={1}>
               <Title color={txtColor}>Color of the Day</Title>
