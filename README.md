@@ -1,4 +1,8 @@
 ﻿# random-color-generator
+## Purpose of this app
+This is one of my learning project. My goal in this project is to learn how React Hooks work with using REST api. 
+I used the color API from here: https://www.thecolorapi.com/
+
 
 ## How to play
 Once you launch this app, you can click the button to generate the color. It will show the random color and also provides the RGB value and the name of the color.
