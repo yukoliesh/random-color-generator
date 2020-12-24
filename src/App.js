@@ -8,14 +8,7 @@ import { Loader } from "./Loader/Loader";
 
 
 const App = (props) => {
-  const getRandomHex = () => {
-    const letters = '0123456789ABCDEF'.split('');
-    let color = '';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
+
   const [data, setData] = React.useState({});
   const [query, setQuery] = React.useState("24B1E0");
   const [colorHex, setColorHex] = React.useState("#24B1E0");
@@ -41,7 +34,14 @@ const App = (props) => {
     fetchData();
   }, [query]);
 
-
+  const getRandomHex = () => {
+    const letters = '0123456789ABCDEF'.split('');
+    let color = '';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
   const onGenerateColor = () => {
     const name = data.name.value;
