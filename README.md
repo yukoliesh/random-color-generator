@@ -1,6 +1,6 @@
 ﻿# random-color-generator
 ## Purpose of this app
-This is one of my learning project. My goal in this project is to learn how React Hooks work with using REST api. 
+This is one of my learning projects. My goal in this project is to learn how React Hooks work with using REST api. 
 I used the color API from here: https://www.thecolorapi.com/
 
 
